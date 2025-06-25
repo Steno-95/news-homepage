@@ -20,7 +20,7 @@ const contents = [
 function News() {
   return (
     <section className="new-section">
-      <h2 className="text-(--soft-orange) font-extrabold">New</h2>
+      <h2 className="text-(--soft-orange) font-bold">New</h2>
 
       <ul>
         {contents.map((news) => (
