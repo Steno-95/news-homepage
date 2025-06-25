@@ -24,7 +24,7 @@ const contents = [
 function Popular() {
   return (
     <section className="popular-section">
-      <ul>
+      <ul className="flex flex-col lg:flex-row gap-5 lg:gap-1">
         {contents.map((item, i) => (
           <PopularItem contents={item} key={item.title} index={i} />
         ))}
