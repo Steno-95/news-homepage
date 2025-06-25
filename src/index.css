@@ -22,7 +22,7 @@
 /* FONT_WEIGHT: 400, 700, 800 */
 @layer base {
   #root {
-    @apply min-h-screen bg-(--off-white) relative;
+    @apply min-h-screen bg-(--off-white) relative max-w-[1460px] mx-auto;
   }
 
   body {
@@ -32,37 +32,37 @@
   }
 
   p {
-    font-size: clamp(0.95em, 0.8em + 0.4vw, 1.5em);
+    font-size: clamp(0.94em, 0.4em + 2vw, 1.3em);
     color: var(--darkgray-blue);
   }
 
   h1 {
-    font-size: clamp(2.8em, 1.4em + 0.4vw, 4em);
+    font-size: clamp(2em, 1.5em + 3vw, 5em);
     line-height: 1;
   }
   h2 {
-    font-size: clamp(1.5em, 1em + 0.4vw, 2.5em);
+    font-size: clamp(1.5em, 1.5em + 3vw, 4em);
   }
   h3 {
-    font-size: clamp(1 0.2em, 0.8em + 0.4vw, 1.8em);
+    font-size: clamp(0.8em, 0.4em + 1.5vw, 1.7em);
   }
 }
 
 @layer components {
   .hero {
-    @apply lg:grid lg:grid-cols-2 flex flex-col gap-5;
+    @apply md:grid md:grid-cols-2 flex flex-col gap-5 md:gap-8 col-span-2;
   }
 
   .new-section {
-    @apply bg-(--darkest-blue) px-4 pt-5;
+    @apply bg-(--darkest-blue) px-4 pt-5 lg:px-6;
   }
 
   .popular-section {
-    @apply flex gap-5;
+    @apply flex gap-5 lg:col-span-3;
   }
 
   .wrapper {
-    @apply lg:grid lg:grid-cols-3 gap-5 flex flex-col p-4;
+    @apply md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 flex flex-col p-4 lg:gap-y-18;
   }
 
   .bg-filter {
