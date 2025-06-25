@@ -4,14 +4,20 @@ import Logo from "./Logo";
 import NavigationList from "./NavigationList";
 
 function Navigation() {
-  const { isMobile, isDesktop } = useScreenSize();
+  const { isMobile, isDesktop } = useScreenSize("640px");
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="flex justify-between items-center py-5 px-3">
       <Logo />
 
-      {isDesktop && <NavigationList />}
-      {isMobile && isOpen && (
+      {isDesktop && (
+        <NavigationList
+          className={
+            "text-[clamp(1.2em,.6em+1.5vw,1.5em)] text-(--darkgray-blue)"
+          }
+        />
+      )}
+      {isMobile && !isOpen && (
         <svg
           onClick={() => setIsOpen((open) => !open)}
           width="40"
@@ -24,7 +30,7 @@ function Navigation() {
           </g>
         </svg>
       )}
-      {isMobile && !isOpen && (
+      {isMobile && isOpen && (
         <div className="bg-filter">
           <aside className="mobile-nav ">
             <svg
